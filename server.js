@@ -9,12 +9,12 @@ app.get("/", (req, res) => {
   res.send("DevBank Backend Running");
 });
 
-app.get("/testAPI", (req, res) => {
-  res.send("API is working properly");
+app.get("/api/time", (req, res) => {
+  res.json({
+    message: "Hello, the time at the server is now " + new Date().toUTCString()
+  });
 });
 
-const PORT = 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
 });
